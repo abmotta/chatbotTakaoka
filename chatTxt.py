@@ -23,7 +23,7 @@ def create_vectorstore():
     )
 
     chunks = text_splitter.split_documents(doc)
-    embeddings_model = OpenAIEmbeddings()
+    embeddings_model = OpenAIEmbeddings(openai_api_key=st.secrets.openai_api_key)
     vectorstore = FAISS.from_documents(chunks, embeddings_model)
     return vectorstore
 
@@ -42,7 +42,7 @@ Questão: Como fazer o manejo da {question} antes da cirurgia?
 """
 prompt = ChatPromptTemplate.from_template(template)
 
-model = ChatOpenAI()
+model = ChatOpenAI(openai_api_key=st.secrets.openai_api_key)
 
 chain = (
     {"context": retriever, "question": RunnablePassthrough()}
