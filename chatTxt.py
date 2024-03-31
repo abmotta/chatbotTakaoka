@@ -9,9 +9,6 @@ import streamlit as st
 
 
 
-openai_api_key = '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'
-
-
 #Carrega o PDF e salva o texto na variável text
 
 def create_vectorstore():
