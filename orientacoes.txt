@@ -61,3 +61,43 @@ detemir (Levemir®), da classe dos(as) Insulinas basais de ação longa, deve se
 glargina 300 U/mL (Toujeo®), da classe dos(as) Insulinas basais de ação ultralonga, deve ser mantida ou diminuiída em 20-30% a dose 72 horas antes do procedimento. Em paciente com maior proporção de basal esta redução pode chegar a 50%.
 
 degludeca (Tresiba®), da classe dos(as) Insulinas basais de ação ultralonga, deve ser mantida ou diminuiída em 20-30% a dose 72 horas antes do procedimento. Em paciente com maior proporção de basal esta redução pode chegar a 50%.
+
+
+SUSPENSÃO DE MEDICAMENTOS PRÉ-OPERATÓRIO
+Versão 1.0
+
+ANTIPLAQUETÁRIOS
+OBS.: PARA NEUROEIXO CONSIDERAR TEMPO MÁXIMO EXCETO ASS
+
+AAS, Aspirina® Melhoral®: Suspensão de 7 dias (Se paciente de baixo risco cardiovascular e cirurgia de alto risco de sangramento).
+Inibidores P2Y12:
+Clopidogrel (Plavix® Iscover®): 5-7 dias
+Prasugrel (Effient®): 7-10 dias
+Ticlopinidina (Ticlid®): 10 dias
+Inibidores ADP:
+Ticagrelor (Brilinta®): 5-7 dias
+Cangrelor (Kengreal®): 3h
+Inibidores da fosfodiesterase:
+Cilostazol (Pletal® Vasoguard®): 48h
+Dipiridamol (Persantin®): 24h
+Inibidores IIb/IIIa:
+Abciximab (Reopro®): 24-48h
+Eptifibatide (Integrilin®) e Tirofiban (Aggrastat®): 4-8h
+ANTICOAGULANTES
+
+Heparina não Fracionada (HNF):
+HNF 15.000U.dia (profilática baixa dose): SC 4-6h
+HNF 7500-10.000 2x/dia ou dose diária < 20.000U (profilática alta dose): SC 12h
+HNF > 10.000U por dose ou dose diária > 20.000U (terapêutica): SC 24h
+Heparina não Fracionada EV: Verificar se coagulação normal 4-6h
+Foundaparinux (Arixtra®): 36-42h
+Heparina de baixo peso molecular:
+Enoxaparina Clexane® (Profilático): 12h
+Enoxaparina Clexane® (Terapêutico): 24h
+Warfarin (Marevan®, Antagonista Vit. K): 5 dias + INR<1.5
+Dabigatrana (Pradaxa®):
+ClCr normal (>80ml/min): 72h
+ClCr 50 a 79 ml/min: 4 dias
+ClCr 30 a 49 ml/min: 5 dias
+ClCr< 30 ml/min: Não puncionar neuroeixo
+Rivaroxabana (Xarelto®), Apixabana (Eliquis®), Endoxabana (Lixiana® Savaysa®), Betrixabana (Bevyxxa®): 72h
