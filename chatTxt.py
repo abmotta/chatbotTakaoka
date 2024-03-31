@@ -53,7 +53,9 @@ chain = (
 
 chain.invoke('metformina')
 
-st.header('🏥⚕‍🤖 Pergunte para o Taka 🩺️🧑🏽💊 ')
+#🏥🧑🏽
+
+st.header('⚕‍🤖 Pergunte para o Taka 🩺️💊 ')
 st.subheader(
     'Olá! Eu sou o ' + ':green[Taka]' + ', o assistente virtual da Takaoka Anestesia! Permita-me auxiliá-lo(a) no manejo '
                                         'perioperatório de medicações.')
