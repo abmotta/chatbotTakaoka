@@ -52,7 +52,8 @@ chain = (
     | StrOutputParser()
 )
 
-#st.markdown("<h1 style='text-align: center; color: black;'>⚕‍🤖Pergunte para o Taka 🩺️💊</h1>", unsafe_allow_html=True)
+logo_robot = "https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/taka_robot.png"
+logo_med = "https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/doctor_avatar_medical_icon_140443.png"
 
 st.header("⚕‍🤖Pergunte para o Taka 🩺️💊")
 
