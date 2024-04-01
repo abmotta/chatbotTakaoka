@@ -56,14 +56,23 @@ chain = (
 
 st.header("⚕‍🤖Pergunte para o Taka 🩺️💊")
 
-message('Olá! Eu sou o Taka, o assistente virtual da Takaoka Anestesia! Permita-me auxiliá-lo(a) no manejo '
-                                        'perioperatório de medicações.', logo="https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/taka_robot.png")
+if "msgs" not in st.session_state.keys():
+    st.session_state.msgs = [{"is_user": False, "content": "Olá! Eu sou o Taka, o assistente virtual da Takaoka "
+                                                           "Anestesia! Permita-me auxiliá-lo(a) no manejo perioperatório "
+                                                           "de medicações.", "logo": logo_robot}]
+
+def generate_response(user_question):
+    ia_response = chain.invoke(user_question)
+    st.session_state.msgs.append({"is_user": True, "content": user_question, "logo": logo_med})
+    st.session_state.msgs.append({"is_user": False, "content": ia_response, "logo": logo_robot})
 
 user_question = st.chat_input('Digite o nome da medicação')
 
 if user_question:
-    message(user_question, is_user=True, logo="https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/doctor_avatar_medical_icon_140443.png")
-    ia_response = chain.invoke(user_question)
-    message(ia_response, logo="https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/taka_robot.png")
+    generate_response(user_question)
+
+for msg in st.session_state.msgs:
+    message(msg["content"], is_user=msg["is_user"], logo=msg["logo"])
+
 
 
