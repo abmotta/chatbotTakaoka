@@ -9,9 +9,6 @@ import streamlit as st
 from streamlit_chat import message
 
 
-
-#Carrega o PDF e salva o texto na variável text
-
 def create_vectorstore():
     loader = TextLoader("./orientacoes.txt")
     doc = loader.load()
@@ -55,7 +52,8 @@ chain = (
 logo_robot = "https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/taka_robot.png"
 logo_med = "https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/doctor_avatar_medical_icon_140443.png"
 
-st.header("⚕‍🤖Pergunte para o Taka 🩺️💊")
+with st.container(height=80, border=False):
+    st.header("⚕‍🤖Pergunte para o Taka 🩺️💊")
 
 if "msgs" not in st.session_state.keys():
     st.session_state.msgs = [{"is_user": False, "content": "Olá! Eu sou o Taka, o assistente virtual da Takaoka "
