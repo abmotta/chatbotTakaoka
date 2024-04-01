@@ -52,7 +52,9 @@ chain = (
     | StrOutputParser()
 )
 
-st.markdown("<h1 style='text-align: center; color: black;'>⚕‍🤖Pergunte para o Taka 🩺️💊</h1>", unsafe_allow_html=True)
+#st.markdown("<h1 style='text-align: center; color: black;'>⚕‍🤖Pergunte para o Taka 🩺️💊</h1>", unsafe_allow_html=True)
+
+st.title("⚕‍🤖Pergunte para o Taka 🩺️💊")
 
 message('Olá! Eu sou o Taka, o assistente virtual da Takaoka Anestesia! Permita-me auxiliá-lo(a) no manejo '
                                         'perioperatório de medicações.', logo="https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/taka_robot.png")
