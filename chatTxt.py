@@ -6,6 +6,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 import streamlit as st
+from streamlit_chat import message
 
 
 
@@ -51,17 +52,16 @@ chain = (
     | StrOutputParser()
 )
 
-chain.invoke('metformina')
+st.markdown("<h1 style='text-align: center; color: black;'>⚕‍🤖Pergunte para o Taka 🩺️💊</h1>", unsafe_allow_html=True)
 
-#🏥🧑🏽
-
-st.header('⚕‍🤖 Pergunte para o Taka 🩺️💊 ')
-st.subheader(
-    'Olá! Eu sou o ' + ':green[Taka]' + ', o assistente virtual da Takaoka Anestesia! Permita-me auxiliá-lo(a) no manejo '
-                                        'perioperatório de medicações.')
+message('Olá! Eu sou o Taka, o assistente virtual da Takaoka Anestesia! Permita-me auxiliá-lo(a) no manejo '
+                                        'perioperatório de medicações.', logo="https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/taka_robot.png")
 
 user_question = st.chat_input('Digite o nome da medicação')
+
 if user_question:
+    message(user_question, is_user=True)
     ia_response = chain.invoke(user_question)
-    st.info(ia_response)
+    message(ia_response, logo="https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/taka_robot.png")
+
 
