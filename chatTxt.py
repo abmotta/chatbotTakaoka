@@ -62,7 +62,7 @@ message('Olá! Eu sou o Taka, o assistente virtual da Takaoka Anestesia! Permita
 user_question = st.chat_input('Digite o nome da medicação')
 
 if user_question:
-    message(user_question, is_user=True)
+    message(user_question, is_user=True, logo="https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/doctor_avatar_medical_icon_140443.png")
     ia_response = chain.invoke(user_question)
     message(ia_response, logo="https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/taka_robot.png")
 
