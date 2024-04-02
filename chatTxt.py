@@ -22,7 +22,7 @@ def create_vectorstore():
 
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=450,
-        chunk_overlap=50,
+        chunk_overlap=0,
         length_function=len,
         is_separator_regex=False,
     )
