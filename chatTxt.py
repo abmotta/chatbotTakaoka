@@ -38,12 +38,16 @@ if 'vectorstore' not in st.session_state:
 
 retriever = st.session_state.vectorstore.as_retriever()
 
-template = """Você é um médico que orienta suspensao pre-operatoria de medicacoes. Responda com base somente no 
-seguinte contexto: {context}. Explique particularidades da medicação em questão. Não dê justificativa para informação 
-que não encontrar no contexto. Não coloque uma frase de conclusão. Caso
-nao encontre a medicacao, Responda: Desculpe, não tenho informação sobre esta medicação. 
+template = """
+Você deve responder como um médico experiente orientando outro médico.
+Responda de maneira objetiva, com base somente no seguinte contexto: {context}.
+Responda em uma ou duas frases, incluindo o nome do princípio ativo, nomes comerciais constantes na base de dados, tipo de droga, classe e oriente o manejo perioperatório.
+Caso encontre informação adicional, informe.
+Caso não encontre informação adicional, não mencione que não encontrou.
+Não coloque uma frase de conclusao na resposta, para ser mais conciso.
+Caso nao encontre a medicação, responda: 'Desculpe, não tenho informação sobre esta medicação'.
 
-Questão: Como fazer o manejo da {question} antes da cirurgia?
+Question: Explique o manejo da {question} no período perioperatorio?
 """
 prompt = ChatPromptTemplate.from_template(template)
 
