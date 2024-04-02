@@ -21,8 +21,8 @@ def create_vectorstore():
     doc = loader.load()
 
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=600,
-        chunk_overlap=150,
+        chunk_size=450,
+        chunk_overlap=50,
         length_function=len,
         is_separator_regex=False,
     )
