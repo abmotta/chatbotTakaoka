@@ -66,10 +66,11 @@ with st.container(height=80, border=False):
 if "msgs" not in st.session_state.keys():
     st.session_state.msgs = [{"is_user": False, "content": "Olá! Eu sou o Taka, o assistente virtual da Takaoka "
                                                            "Anestesia! Permita-me auxiliá-lo(a) no manejo perioperatório "
-                                                           "de medicações.", "logo": logo_robot, "key": 0}]
+                                                           "de medicações.", "logo": logo_robot}]
 
 if "msg_id" not in st.session_state.keys():
     st.session_state.msg_id = 0
+    
 def gen_msg_id():
     st.session_state.msg_id += 1
     return st.session_state.msg_id
