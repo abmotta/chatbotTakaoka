@@ -21,8 +21,8 @@ def create_vectorstore():
     doc = loader.load()
 
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1000,
-        chunk_overlap=300,
+        chunk_size=600,
+        chunk_overlap=150,
         length_function=len,
         is_separator_regex=False,
     )
@@ -47,7 +47,7 @@ Questão: Como fazer o manejo da {question} antes da cirurgia?
 """
 prompt = ChatPromptTemplate.from_template(template)
 
-model = ChatOpenAI(openai_api_key=st.secrets.openai_api_key)
+model = ChatOpenAI(openai_api_key=st.secrets.openai_api_key, temperature=0)
 
 chain = (
     {"context": retriever, "question": RunnablePassthrough()}
