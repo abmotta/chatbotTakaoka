@@ -7,10 +7,17 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 import streamlit as st
 from streamlit_chat import message
+from langchain_community.document_loaders import NotionDBLoader
 
+NOTION_TOKEN = st.secrets.notion_token
+DATABASE_ID = st.secrets.database_id
 
 def create_vectorstore():
-    loader = TextLoader("./orientacoes.txt")
+    loader = NotionDBLoader(
+        integration_token=NOTION_TOKEN,
+        database_id=DATABASE_ID,
+        request_timeout_sec=30,  # optional, defaults to 10
+    )
     doc = loader.load()
 
     text_splitter = RecursiveCharacterTextSplitter(
@@ -55,10 +62,17 @@ logo_med = "https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/doctor
 with st.container(height=80, border=False):
     st.header("⚕‍🤖Pergunte para o Taka 🩺️💊")
 
+
 if "msgs" not in st.session_state.keys():
     st.session_state.msgs = [{"is_user": False, "content": "Olá! Eu sou o Taka, o assistente virtual da Takaoka "
                                                            "Anestesia! Permita-me auxiliá-lo(a) no manejo perioperatório "
-                                                           "de medicações.", "logo": logo_robot}]
+                                                           "de medicações.", "logo": logo_robot, "key": 0}]
+
+if "msg_id" not in st.session_state.keys():
+    st.session_state.msg_id = 0
+def gen_msg_id():
+    st.session_state.msg_id += 1
+    return st.session_state.msg_id
 
 def generate_response(user_question):
     ia_response = chain.invoke(user_question)
@@ -71,7 +85,7 @@ if user_question:
     generate_response(user_question)
 
 for msg in st.session_state.msgs:
-    message(msg["content"], is_user=msg["is_user"], logo=msg["logo"])
-
+    key = str(gen_msg_id())
+    message(msg["content"], is_user=msg["is_user"], logo=msg["logo"], key=key)
 
 
