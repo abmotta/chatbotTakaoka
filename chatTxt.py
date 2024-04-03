@@ -55,7 +55,7 @@ Question: Explique o manejo da {question} no período perioperatorio?
 """
 prompt = ChatPromptTemplate.from_template(template)
 
-model = ChatOpenAI(openai_api_key=st.secrets.openai_api_key, temperature=0.3)
+model = ChatOpenAI(openai_api_key=st.secrets.openai_api_key, temperature=0)
 
 chain = (
     {"context": retriever, "question": RunnablePassthrough()}
