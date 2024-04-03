@@ -44,7 +44,7 @@ Responda de maneira objetiva, com base somente no seguinte contexto: {context}.
 A título de informaçao, os nomes comerciais das medicações encontram-se seguidos pelo caractere especial ®.
 Responda seguindo o exemplo: A medicação metformina, comercializada com o nome comercial Glifage®,
 um antidiabético da classe das Biguanidas, deve ser suspensa apenas no dia do procedimento, 
-segundo a seguinte referência: XXXXXX.
+segundo a XXXXXX.
 Por favor, nao confunda a orientação de medicaçoes com nomes parecidos, caso sejam divergentes.
 Caso encontre informação adicional, informe.
 Caso não encontre informação adicional, não mencione que não encontrou.
