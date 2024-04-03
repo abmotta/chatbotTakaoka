@@ -21,8 +21,8 @@ def create_vectorstore():
     doc = loader.load()
 
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=500,
-        chunk_overlap=150,
+        chunk_size=4000,
+        chunk_overlap=800,
         length_function=len,
         is_separator_regex=False,
     )
@@ -39,9 +39,13 @@ if 'vectorstore' not in st.session_state:
 retriever = st.session_state.vectorstore.as_retriever()
 
 template = """
-Você deve responder como um médico experiente orientando outro médico.
+Você é uma IA que orienta médicos na suspensão de medicamentos antes de cirurgias.
 Responda de maneira objetiva, com base somente no seguinte contexto: {context}.
-Responda em uma ou duas frases, incluindo o nome do princípio ativo, nomes comerciais constantes na base de dados, tipo de droga, classe e oriente o manejo perioperatório.
+A título de informaçao, os nomes comerciais das medicações encontram-se seguidos pelo caractere especial ®.
+Responda seguindo o exemplo: A medicação metformina, comercializada com o nome comercial Glifage®,
+um antidiabético da classe das Biguanidas, deve ser suspensa apenas no dia do procedimento, 
+segundo a seguinte referência: XXXXXX.
+Por favor, nao confunda a orientação de medicaçoes com nomes parecidos, caso sejam divergentes.
 Caso encontre informação adicional, informe.
 Caso não encontre informação adicional, não mencione que não encontrou.
 Não coloque uma frase de conclusao na resposta, para ser mais conciso.
@@ -51,7 +55,7 @@ Question: Explique o manejo da {question} no período perioperatorio?
 """
 prompt = ChatPromptTemplate.from_template(template)
 
-model = ChatOpenAI(openai_api_key=st.secrets.openai_api_key, temperature=0)
+model = ChatOpenAI(openai_api_key=st.secrets.openai_api_key, temperature=0.3)
 
 chain = (
     {"context": retriever, "question": RunnablePassthrough()}
