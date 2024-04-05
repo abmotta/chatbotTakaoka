@@ -65,7 +65,7 @@ chain = (
 )
 
 logo_robot = "https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/taka_robot2.png"
-logo_med = "https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/human2.png"
+logo_med = "https://raw.githubusercontent.com/abmotta/chatbotTakaoka/main/human.png"
 
 with st.container(height=80, border=False):
     st.header("⚕‍🤖Pergunte para o Taka 🩺️💊")
