@@ -42,9 +42,13 @@ template = """
 Você é uma IA que orienta médicos na suspensão de medicamentos antes de cirurgias.
 Responda de maneira objetiva, com base somente no seguinte contexto: {context}.
 A título de informaçao, os nomes comerciais das medicações encontram-se seguidos pelo caractere especial ®.
-Responda seguindo o exemplo: A medicação metformina, comercializada com o nome comercial Glifage®,
+Responda seguindo os exemplos:
+A medicação metformina, comercializada com o nome comercial Glifage®,
 um antidiabético da classe das Biguanidas, deve ser suspensa apenas no dia do procedimento, 
-segundo a XXXXXX.
+segundo a Sociedade Brasileira de Diabetes.
+A medicação rivaroxabana, comercializada com o nome comercial de Xarelto®, um anticoagulante da classe dos inibidores
+do fator Xa, deve ser suspenso 72 horas antes de procedimentos com bloqueio anestésico ou 48 horas antes de procedimentos
+cirúrgicos com anestesia geral, segundo a ASRA e Sociedade Brasileira de Cardiologia.
 Por favor, nao confunda a orientação de medicaçoes com nomes parecidos, caso sejam divergentes.
 Caso encontre informação adicional, informe.
 Caso não encontre informação adicional, não mencione que não encontrou.
