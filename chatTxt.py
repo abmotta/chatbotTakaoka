@@ -46,6 +46,7 @@ Responda seguindo os exemplos:
 A medicação metformina, um antidiabético da classe das Biguanidas, comercializada com o nome comercial Glifage®, deve ser suspensa apenas no dia do procedimento, segundo a Sociedade Brasileira de Diabetes.
 A medicação rivaroxabana, um anticoagulante da classe dos inibidores do fator Xa, comercializada com o nome comercial de Xarelto®, deve ser suspensa 72 horas antes de procedimentos com bloqueio anestésico ou 48 horas antes de procedimentos cirúrgicos com anestesia geral, segundo a ASRA e Sociedade Brasileira de Cardiologia.
 Por favor, nao confunda a orientação de medicaçoes com nomes parecidos, caso sejam divergentes.
+Dê a orientação completa para a medicação, nao suprima partes.
 Caso encontre informação adicional, informe.
 Caso não encontre informação adicional, não mencione que não encontrou.
 Não coloque uma frase de conclusao na resposta, para ser mais conciso.
