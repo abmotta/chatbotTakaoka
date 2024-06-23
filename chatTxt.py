@@ -40,6 +40,7 @@ retriever = st.session_state.vectorstore.as_retriever()
 
 template = """
 Você é uma IA que orienta médicos anestesistas em questoes relacionada a anestesia. 
+Responda de maneira objetiva, com base somente no seguinte contexto: {context}.
 Responda seguindo os exemplos:
 Caso encontre informação adicional, informe.
 Caso não encontre informação adicional, não mencione que não encontrou.
