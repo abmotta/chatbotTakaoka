@@ -70,8 +70,7 @@ with st.container(height=140, border=False):
 
 if "msgs" not in st.session_state.keys():
     st.session_state.msgs = [{"is_user": False, "content": "Olá! Eu sou o Taka, o assistente virtual da Takaoka "
-                                                           "Anestesia! Permita-me auxiliá-lo(a) no manejo perioperatório "
-                                                           "de medicações.", "logo": logo_robot}]
+                                                           "Anestesia! Como posso ajudar?", "logo": logo_robot}]
 
 if "msg_id" not in st.session_state.keys():
     st.session_state.msg_id = 0
@@ -85,7 +84,7 @@ def generate_response(user_question):
     st.session_state.msgs.append({"is_user": True, "content": user_question, "logo": logo_med})
     st.session_state.msgs.append({"is_user": False, "content": ia_response, "logo": logo_robot})
 
-user_question = st.chat_input('Digite o nome da medicação')
+user_question = st.chat_input('Digite a sua dúvida')
 
 if user_question:
     generate_response(user_question)
