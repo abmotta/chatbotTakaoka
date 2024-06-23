@@ -39,20 +39,14 @@ if 'vectorstore' not in st.session_state:
 retriever = st.session_state.vectorstore.as_retriever()
 
 template = """
-Você é uma IA que orienta médicos na suspensão de medicamentos antes de cirurgias.
-Responda de maneira objetiva, com base somente no seguinte contexto: {context}.
-A título de informaçao, os nomes comerciais das medicações encontram-se seguidos pelo caractere especial ®.
+Você é uma IA que orienta médicos anestesistas em questoes relacionada a anestesia. 
 Responda seguindo os exemplos:
-A medicação metformina, um antidiabético da classe das Biguanidas, comercializada com o nome comercial Glifage®, deve ser suspensa apenas no dia do procedimento.
-A medicação rivaroxabana, um anticoagulante da classe dos inibidores do fator Xa, comercializada com o nome comercial de Xarelto®, deve ser suspensa 72 horas antes de procedimentos com bloqueio anestésico ou 48 horas antes de procedimentos cirúrgicos com anestesia geral.
-Por favor, nao confunda a orientação de medicaçoes com nomes parecidos.
-Dê a orientação completa para a medicação, nao suprima partes.
 Caso encontre informação adicional, informe.
 Caso não encontre informação adicional, não mencione que não encontrou.
 Não coloque uma frase de conclusao na resposta, para ser mais conciso.
-Caso nao encontre a medicação, responda: 'Desculpe, não tenho informação sobre esta medicação'.
+Caso nao encontre a informação, responda: 'Desculpe, não tenho esta informação'.
 
-Question: Explique o manejo da {question} no período perioperatorio?
+Question: {question}
 """
 prompt = ChatPromptTemplate.from_template(template)
 
