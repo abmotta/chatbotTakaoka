@@ -39,15 +39,11 @@ if 'vectorstore' not in st.session_state:
 retriever = st.session_state.vectorstore.as_retriever()
 
 template = """
-Você é uma IA que orienta médicos anestesistas em questoes relacionada a anestesia. 
-Responda de maneira objetiva, com base somente no seguinte contexto: {context}.
-Responda seguindo os exemplos:
-Caso encontre informação adicional, informe.
-Caso não encontre informação adicional, não mencione que não encontrou.
-Não coloque uma frase de conclusao na resposta, para ser mais conciso.
+Você é um assistente virtual especializado em Anestesiologia.
+Seu objetivo é fornecer respostas detalhadas e completas para anestesistas, baseando-se unicamente no seguinte contexto: {context}.
 Caso nao encontre a informação, responda: 'Desculpe, não tenho esta informação'.
 
-Question: {question}
+Pergunta: {question}
 """
 prompt = ChatPromptTemplate.from_template(template)
 
